@@ -4,3 +4,6 @@ resource "aws_instance" "ec2-instance" {
   disable_api_termination = true
 }
 
+output "test" {
+  value = "output-test-working"
+}
