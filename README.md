@@ -1,3 +1,3 @@
 # Terraform
 
-Now it should not automatically create the plan
+Removed the option to run the trigger for every commit
