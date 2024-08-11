@@ -1,3 +1,3 @@
 # Terraform
 
-This is automatically created the plan
+Now it should not automatically create the plan
