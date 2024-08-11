@@ -7,3 +7,6 @@ resource "aws_instance" "ec2-instance" {
 output "test" {
   value = "output-test-working"
 }
+output "instance_ip" {
+  value = aws_instance.ec2-instance.public_ip
+}
