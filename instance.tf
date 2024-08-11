@@ -1,12 +1,16 @@
 resource "aws_instance" "ec2-instance" {
-  ami           = "ami-0ba9883b710b05ac6" # last parameter is the default value
+  ami           = data.aws_ami.my_ami.id # last parameter is the default value
   instance_type = "t2.medium"
   disable_api_termination = true
 }
 
-output "test" {
-  value = "output-test-working"
-}
-output "instance_ip" {
-  value = aws_instance.ec2-instance.id
+data "aws_ami" "my_ami" {
+  most_recent = true
+  owners = ["amazon"]
+
+  filter {
+    name = "name"
+    values = ["amzn2-ami-hvm*"]
+  }
+
 }
